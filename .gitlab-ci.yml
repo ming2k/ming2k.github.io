@@ -1,0 +1,28 @@
+# 指定使用的镜像
+image: ruby:latest
+
+# 定义阶段
+stages:
+  - build
+  - deploy
+
+# 定义作业
+build:
+  stage: build
+  script:
+    - gem install bundler jekyll
+    - bundle install
+    - bundle exec jekyll build
+  artifacts:
+    paths:
+      - _site/
+    expire_in: 1 week
+
+deploy:
+  stage: deploy
+  script:
+    - apt-get update -qy
+    - apt-get install -y openssh-client
+    - sshpass -p "$SSH_PASSWORD" scp -r _site/* $SSH_USER@$SERVER_IP:$SERVER_PATH
+  only:
+    - main

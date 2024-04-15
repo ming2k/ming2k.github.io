@@ -66,10 +66,13 @@ emerge -avuDN @world
 清理缓存：
 
 ```sh
-emerge --depclean       # 删除不再需要的软件包及其依赖项
-emerge --prune          # 删除已安装软件包的构建工件和临时文件
-eclean-dist             # 清理 Portage 的二进制软件包和源代码包缓存
-eclean-pkg              # 清理 Portage 的已安装软件包和二进制软件包
+sudo emerge --depclean       # 删除不再需要的软件包及其依赖项
+# or
+sudo emerge -c
+
+sudo emerge --prune          # 删除已安装软件包的构建工件和临时文件
+sudo eclean-dist             # 清理 Portage 的二进制软件包和源代码包缓存
+sudo eclean-pkg              # 清理 Portage 的已安装软件包和二进制软件包
 ```
 
 ## equery
