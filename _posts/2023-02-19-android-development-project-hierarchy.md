@@ -1,3 +1,10 @@
+---
+title: android development project hierarchy
+date: 2023-02-19
+---
+
+# Android开发项目文件层级
+
 .gradle： Gradle编译系统，版本由wrapper指定
 .idea：IDE所需要的文件
 app：开发项目的所有代码和资源文件

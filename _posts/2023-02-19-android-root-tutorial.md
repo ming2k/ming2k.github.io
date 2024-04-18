@@ -1,5 +1,6 @@
 ---
-title: Android Root Tutorial
+title: android root tutorial
+date: 2023-02-19
 ---
 
 # Android Root Tutorial

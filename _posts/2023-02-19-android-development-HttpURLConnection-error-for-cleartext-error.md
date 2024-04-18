@@ -1,5 +1,6 @@
 ---
-title: Android development HttpURLConnection error for cleartext error
+title: android development HttpURLConnection error for cleartext error
+date: 2023-02-19
 ---
 
 

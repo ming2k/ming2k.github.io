@@ -1,12 +1,9 @@
 ---
-title: redirect obs to wemeet on linux 
+title: redirect obs to wemeet on linux
+date: 2024-04-18
 ---
 
-
-
 # 转发OBS到腾讯会议
-
-
 
 由于腾讯会与不支持wayland的屏幕共享协议，于是有了个曲线救国的方式，就是利用OBS将屏幕做虚拟摄像机。
 

@@ -1,3 +1,10 @@
+---
+title: java annotation
+date: 2024-04-18
+---
+
+
+
 Java语言使用`@interface`语法来定义注解（`Annotation`），它的格式如下：
 
 ```java

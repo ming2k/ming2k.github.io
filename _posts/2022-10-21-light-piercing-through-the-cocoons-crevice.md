@@ -1,5 +1,7 @@
 ---
-title: 有道光透过茧缝
+title: light piercing through the cocoon's crevice
+date: 2022-10-21
+published: false
 ---
 
 # 有道光透过茧缝

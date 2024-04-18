@@ -1,5 +1,7 @@
 ---
 title: nihilistic danger
+date: 2022-10-10
+published: false
 ---
 
 # 虚无注意危险

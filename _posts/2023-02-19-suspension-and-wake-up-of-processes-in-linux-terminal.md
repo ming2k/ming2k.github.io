@@ -1,3 +1,12 @@
+---
+title: suspension and wake-up of processes in linux terminal
+date: 2024-04-18
+---
+
+# Linux 终端进程的刮起与唤醒
+
+
+
 suspended process
 
 Ctrl+C：终止前台正在运行的进程

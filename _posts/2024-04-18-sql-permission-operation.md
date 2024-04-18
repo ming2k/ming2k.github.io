@@ -1,13 +1,20 @@
+---
+title: sql permission operation
+date: 2024-04-18
+---
+
 # 用户处理
+
 ## 创建用户
+
 指定ip地址连接
 ```sql
 create user <$user_name>@<$ip_adress> identified by '<$passwd>';
-```  
+```
 ## 用户授权
 ```sql
 grant <$privileges> on <$databses_name>.<$table_name> to <$user_name>@<$ip_adress> [identified by '<$passwd>'];
-```  
+```
 privileges:
 - all privileges
 - select

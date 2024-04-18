@@ -17,8 +17,6 @@ date: 2024-03-12
 | 存在量词（Existential Quantification） | $\exist$          |          |
 | 全称量词（Universal Quantification）   | $\forall$         |          |
 
-
-
 异或 Exclusive or 
 
 $\oplus$
