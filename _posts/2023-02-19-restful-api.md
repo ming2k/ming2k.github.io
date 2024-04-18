@@ -4,7 +4,7 @@
 
 ## Using Http Methods for RESTful Services
 
-| HTTP Verb | CRUD           | Entire Collection (e.g. /customers)                          | Specific Item (e.g. /customers/{id})                         |
+| HTTP Verb | CRUD           | xxxxxxxxxx @media ( min-device-width:1024px ) and ( max-width:989px )，screen and ( max-device-width:480px )，( max-device-width:480px ) and ( orientation:landscape )，( min-device-width:480px ) and ( max-device-width:1024px ) and ( orientation:portrait ) {srules}css | Specific Item (e.g. /customers/{id})                         |
 | :-------- | :------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | POST      | Create         | 201 (Created), 'Location' header with link to /customers/{id} containing new ID. | 404 (Not Found), 409 (Conflict) if resource already exists.. |
 | GET       | Read           | 200 (OK), list of customers. Use pagination, sorting and filtering to navigate big lists. | 200 (OK), single customer. 404 (Not Found), if ID not found or invalid. |

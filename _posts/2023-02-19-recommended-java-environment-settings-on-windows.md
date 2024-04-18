@@ -1,3 +1,10 @@
+---
+title: recommended java environment settings on windows
+date: 2023-02-19
+---
+
+# Windows 下推荐的 Java 环境设置
+
 现在 Java 开发项目编码一般都是 UTF-8，Windows 下 JDK 的默认编码是 GB2312，可把其默认值设置为 UTF-8：
 
 右键点击计算机 > 属性 > 高级系统设置 > 高级 > 环境变量 > 系统变量: 设置 JAVA_TOOL_OPTIONS 的值为 -Dfile.encoding=UTF-8
