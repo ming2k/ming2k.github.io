@@ -1,12 +1,15 @@
 ---
 title: music metadata manipulation
 date: 2024-03-31
-published: false
 ---
 
 # 音乐文件元数据控制
 
 最近发现 gnome music 解析音乐文件歌名和歌手乱码，是音乐文件的元数据乱码导致的。
+
+## Prerequiste
+
+音乐的 metadata 是由 [ID3](https://en.wikipedia.org/wiki/ID3) 规定的。`ID3` 目前分为 `v1` 和 `v2` 两个版本。
 
 ## FFMPEG
 
