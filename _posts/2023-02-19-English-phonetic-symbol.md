@@ -1,6 +1,8 @@
 ---
 title: English phonetic symbol
 date: 2023-12-13
+typora-root-url: ../
+typora-copy-images-to: ../assets/images/
 ---
 
 
@@ -36,7 +38,7 @@ date: 2023-12-13
 | 1917 | ***English Pronouncing Dictionary*** (First Edition) by Daniel Jones |
 | 1944 | ***A Pronouncing Dictionary of American English*** by John Samuel Kenyon, Thomas Albert Knott |
 
-根据作者名字，如今我们通常把他们的音标系统分别称作Webster音标、DJ音标、KK音标；从发展的角度来断定如今某些字典使用的音标为其中上述一种音标系统是不合适的，比如牛津字典，以下是[官方原文](https://www.oxfordlearnersdictionaries.com/external/pdf/english/OALD10_phons_GL.pdf)：
+根据作者名字，如今我们通常把他们的音标系统分别称作Webster音标、DJ音标、KK音标；从发展的角度来断定如今某些字典使用的音标为其中上述一种音标系统是不合适的，比如牛津字典，以下是官方原文(https://www.oxfordlearnersdictionaries.com/external/pdf/english/OALD10_phons_GL.pdf)：
 
 > The OALD has used IPA-based phonemic transcription to indicate pronunciation since its first
 > edition (1948). Early editions used transcriptions similar to those found in contemporary
@@ -63,6 +65,10 @@ date: 2023-12-13
 
 **该文章以OALD（Oxford Advanced Leaner's Dinctioanry）音标为准**，权威、合理可靠，基于IPA。
 
+## 国际音标
+
+![IPA_chart_2020](/assets/images/IPA_chart_2020.svg)
+
 ### [英式音标](https://www.oxfordlearnersdictionaries.com/about/english/pronunciation_english)
 
 **Vowels**
@@ -71,28 +77,28 @@ date: 2023-12-13
 
 | Phonetic Symbol | Word   | Pronunciation                 |
 | --------------- | ------ | ----------------------------- |
-| [iː]            | see    | /siː/                         |
-| [i]             | happy  | /ˈhæpi/                       |
-| [ɪ]             | sit    | /sɪt/                         |
-| [e]             | bed    | /bed/                         |
-| [æ]             | cat    | /kæt/                         |
-| [ɜː]            | fur    | /fɜː(r)/                      |
-| [ə]             | about  | /əˈbaʊt/                      |
-| [ʌ]             | cup    | /kʌp/                         |
-| [ɑː]            | father | /ˈfɑːðə(r)/                   |
-| [uː]            | too    | /tuː/                         |
-| [u]             | actual | /ˈæktʃuəl/                    |
-| [ʊ]             | put    | /pʊt/                         |
-| [ɔː]            | saw    | /sɔː/                         |
-| [ɒ]             | got    | /ɡɒt/ *(British English)*     |
-| [aɪ]            | my     | /maɪ/                         |
-| [eɪ]            | say    | /seɪ/                         |
-| [ɔɪ]            | boy    | /bɔɪ/                         |
-| [aʊ]            | now    | /naʊ/                         |
-| [əʊ]            | go     | /ɡəʊ/                         |
-| [ɪə]            | near   | /nɪə(r)/ *(British English)*  |
-| [eə]            | hair   | /heə(r)/ *(British English)*  |
-| [ʊə]            | pure   | /pjʊə(r)/ *(British English)* |
+| iː              | see    | /siː/                         |
+| i               | happy  | /ˈhæpi/                       |
+| ɪ               | sit    | /sɪt/                         |
+| e               | bed    | /bed/                         |
+| æ               | cat    | /kæt/                         |
+| ɜː              | fur    | /fɜː(r)/                      |
+| ə               | about  | /əˈbaʊt/                      |
+| ʌ               | cup    | /kʌp/                         |
+| ɑː              | father | /ˈfɑːðə(r)/                   |
+| uː              | too    | /tuː/                         |
+| u               | actual | /ˈæktʃuəl/                    |
+| ʊ               | put    | /pʊt/                         |
+| ɔː              | saw    | /sɔː/                         |
+| ɒ               | got    | /ɡɒt/ *(British English)*     |
+| aɪ              | my     | /maɪ/                         |
+| eɪ              | say    | /seɪ/                         |
+| ɔɪ              | boy    | /bɔɪ/                         |
+| aʊ              | now    | /naʊ/                         |
+| əʊ              | go     | /ɡəʊ/                         |
+| ɪə              | near   | /nɪə(r)/ *(British English)*  |
+| eə              | hair   | /heə(r)/ *(British English)*  |
+| ʊə              | pure   | /pjʊə(r)/ *(British English)* |
 
 **Consonants**
 
@@ -100,30 +106,30 @@ date: 2023-12-13
 
 | Phonetic Symbol | Word   | Pronunciation |
 | --------------- | ------ | ------------- |
-| [p]             | pen    | /pen/         |
-| [b]             | bad    | /bæd/         |
-| [t]             | tea    | /tiː/         |
-| [d]             | did    | /dɪd/         |
-| [k]             | cat    | /kæt/         |
-| [ɡ]             | get    | /ɡet/         |
-| [tʃ]            | chain  | /tʃeɪn/       |
-| [dʒ]            | jam    | /dʒæm/        |
-| [f]             | fall   | /fɔːl/        |
-| [v]             | van    | /væn/         |
-| [θ]             | thin   | /θɪn/         |
-| [ð]             | this   | /ðɪs/         |
-| [s]             | see    | /siː/         |
-| [z]             | zoo    | /zuː/         |
-| [ʃ]             | shoe   | /ʃuː/         |
-| [ʒ]             | vision | /ˈvɪʒn/       |
-| [h]             | hat    | /hæt/         |
-| [m]             | man    | /mæn/         |
-| [n]             | now    | /naʊ/         |
-| [ŋ]             | sing   | /sɪŋ/         |
-| [l]             | leg    | /leɡ/         |
-| [r]             | red    | /red/         |
-| [j]             | yes    | /jes/         |
-| [w]             | wet    | /wet/         |
+| p               | pen    | /pen/         |
+| b               | bad    | /bæd/         |
+| t               | tea    | /tiː/         |
+| d               | did    | /dɪd/         |
+| k               | cat    | /kæt/         |
+| ɡ               | get    | /ɡet/         |
+| tʃ              | chain  | /tʃeɪn/       |
+| dʒ              | jam    | /dʒæm/        |
+| f               | fall   | /fɔːl/        |
+| v               | van    | /væn/         |
+| θ               | thin   | /θɪn/         |
+| ð               | this   | /ðɪs/         |
+| s               | see    | /siː/         |
+| z               | zoo    | /zuː/         |
+| ʃ               | shoe   | /ʃuː/         |
+| ʒ               | vision | /ˈvɪʒn/       |
+| h               | hat    | /hæt/         |
+| m               | man    | /mæn/         |
+| n               | now    | /naʊ/         |
+| ŋ               | sing   | /sɪŋ/         |
+| l               | leg    | /leɡ/         |
+| r               | red    | /red/         |
+| j               | yes    | /jes/         |
+| w               | wet    | /wet/         |
 
 **letter**
 
@@ -143,49 +149,47 @@ OALD中的英音和美音是有区别的，**根本原因是英国人和美国�
 
 美式英语的发音和北京话一样，慵懒的感觉，发音微快而有儿化音。
 
-规则1：[e] 变 [r]
+规则1：e 变 r
 
 | Word | British English Phonetic Symbol | American English Phonetic Symbol |
 | ---- | ------------------------------- | -------------------------------- |
-| here | [ɪə]                            | [ɪr]                             |
-|      | [eə]                            | [er]                             |
-|      | [ʊə]                            | [ʊr]                             |
+| here | ɪə                              | ɪr                               |
+|      | eə                              | er                               |
+|      | ʊə                              | ʊr                               |
 
-规则2：ar结尾的单词 [ɑː] 变 [ɑ:r]
+规则2：ar结尾的单词 ɑː 变 ɑ:r
 
 | Word | British English Phonetic Symbol | American English Phonetic Symbol |
 | ---- | ------------------------------- | -------------------------------- |
-| car  | [ɑː]                            | [ɑ:r]                            |
+| car  | ɑː                              | ɑ:r                              |
 
 ### 发音参考资料
 
-推荐[剑桥的IPA Chart](https://www.cambridge.org/features/IPAchart/)，该表格总结了音素发音的位置、以及嘴唇的松紧。
+推荐剑桥的 [IPA Chart](https://www.cambridge.org/features/IPAchart/) ，该表格总结了音素发音的位置、以及嘴唇的松紧。
 
 摘录：
 
 English Consonants 
 
-|                                            | Bilabial | [Labiodental](javascript:void(0);) | [Dental](javascript:void(0);) | [Alveolar](javascript:void(0);) | [Postalveolar](javascript:void(0);) | [Palatal](javascript:void(0);) | [Velar](javascript:void(0);) | [Glotal](javascript:void(0);) |
-| ------------------------------------------ | -------- | ---------------------------------- | ----------------------------- | ------------------------------- | ----------------------------------- | ------------------------------ | ---------------------------- | ----------------------------- |
-| (Oral) Stop                                | p b      |                                    |                               | t d                             |                                     |                                | k g                          | ʔ                             |
-| [(Nasal) Stop](javascript:void(0);)        | m        |                                    |                               | n                               |                                     |                                | ŋ                            |                               |
-| [Tap or Flap](javascript:void(0);)         |          |                                    |                               | ɾ                               |                                     |                                |                              |                               |
-| [Affricate](javascript:void(0);)           |          |                                    |                               |                                 | tʃ dʒ                               |                                |                              |                               |
-| [Fricative](javascript:void(0);)           |          | f v                                | θ ð                           | s z                             | ʃ ʒ                                 |                                |                              | h                             |
-| [Approximant](javascript:void(0);)         | w        |                                    |                               | ɹ                               |                                     | j                              | w                            |                               |
-| [Lateral approximant](javascript:void(0);) |          |                                    |                               | l                               |                                     |                                |                              |                               |
+|                     | Bilabial | Labiodental | Dental | Alveolar | Postalveolar | Palatal | Velar | Glotal |
+| ------------------- | -------- | ----------- | ------ | -------- | ------------ | ------- | ----- | ------ |
+| (Oral) Stop         | p b      |             |        | t d      |              |         | k g   | ʔ      |
+| (Nasal) Stop        | m        |             |        | n        |              |         | ŋ     |        |
+| Tap or Flap         |          |             |        | ɾ        |              |         |       |        |
+| Affricate           |          |             |        |          | tʃ dʒ        |         |       |        |
+| Fricative           |          | f v         | θ ð    | s z      | ʃ ʒ          |         |       | h      |
+| Approximant         | w        |             |        | ɹ        |              | j       | w     |        |
+| Lateral approximant |          |             |        | l        |              |         |       |        |
 
 English Vowels
 
-|                             |                              | [Front](javascript:void(0);)                     | [Central](javascript:void(0);)                               | [Back](javascript:void(0);)                   |
-| --------------------------- | ---------------------------- | ------------------------------------------------ | ------------------------------------------------------------ | --------------------------------------------- |
-| [High](javascript:void(0);) | [Tense](javascript:void(0);) | [i](javascript:viewSymbol('symbols/i.html');)    |                                                              | [u](javascript:viewSymbol('symbols/u.html');) |
-|                             | [Lax](javascript:void(0);)   | [ɪ](javascript:viewSymbol('symbols/026A.html');) |                                                              | ʊ                                             |
-| [Mid](javascript:void(0);)  | [Tense](javascript:void(0);) | [e](javascript:viewSymbol('symbols/e.html');)    |                                                              | o                                             |
-|                             | [Lax](javascript:void(0);)   | [ɛ](javascript:viewSymbol('symbols/025B.html');) | [ə](javascript:viewSymbol('symbols/schwa.html');) [ʌ](javascript:viewSymbol('symbols/028C.html');) | (ɔ)                                           |
-| [Low](javascript:void(0);)  | [Lax](javascript:void(0);)   | [æ](javascript:viewSymbol('symbols/00E6.html');) | [a](javascript:viewSymbol('symbols/a.html');)                |                                               |
-
- 
+|      |       | Front | Central | Back |
+| ---- | ----- | ----- | ------- | ---- |
+| High | Tense | i     |         | u    |
+|      | Lax   | ɪ     |         | ʊ    |
+| Mid  | Tense | e     |         | o    |
+|      | Lax   | ɛ     | ə       | (ɔ)  |
+| Low  | Lax   | æ     | a       |      |
 
 ## 拓展
 
@@ -199,37 +203,33 @@ English Vowels
 
 **KK部分表示不遵守IPA标准，增加学习成本！**
 
-| Word        | OALD Symbal | KK Symbal   |
-| ----------- | ----------- | ----------- |
-| n**o**se    | [əʊ]        | [o] or [oʊ] |
-| broth**er** | [ər]        | [ɚ]         |
-| b**ir**d    | [ɜr]        | [ɝ]         |
-| bed         | [e]         | [ɛ]         |
-| lot, hot    | [ɒ]         | [ɑ]         |
+| Word        | OALD Symbal | KK Symbal |
+| ----------- | ----------- | --------- |
+| n**o**se    | əʊ          | o or oʊ   |
+| broth**er** | ər          | ɚ         |
+| b**ir**d    | ɜr          | ɝ         |
+| bed         | e           | ɛ         |
+| lot, hot    | ɒ           | ɑ         |
 
 **KK省去了长音符号，但发音和音长不变，该写法不够直观！**
 
 | Word | OALD Symbal | KK Symbal |
 | ---- | ----------- | --------- |
-| bee  | [iː]        | [i]       |
-|      | [ɑː]        | [ɑ]       |
-|      | [ɔː]        | [ɔ]       |
-|      | [uː]        | [u]       |
-|      | [ɜː]        | [ɜ]       |
+| bee  | iː          | i         |
+|      | ɑː          | ɑ         |
+|      | ɔː          | ɔ         |
+|      | uː          | u         |
+|      | ɜː          | ɜ         |
 
 ## 资源推荐
 
 ### 翻译工具
 
-推荐[OALD官方网站](https://www.oxfordlearnersdictionaries.com/)。
-
-**以下APP斟酌使用**
-
+- Golden Dict 配合 Oxford 字典（推荐）
+- [OALD网页](https://www.oxfordlearnersdictionaries.com/)
 - Google翻译，采用Webster音标
 - 欧路，美音采用KK
 - 有道，美音采用KK
-
-
 
 
 
