@@ -75,9 +75,14 @@ efibootmgr --create --disk /dev/nvme1n1 --label "Gentoo" --loader "\EFI\gentoo\b
 
 **MT7921蓝牙不工作**
 
-https://linux-hardware.org/?id=pci:14c3-7961-1a3b-4680
+把配置的这两个打开：
 
-Linux驱动不支持MT7921
+```
+CONFIG_BT_MTK=m
+CONFIG_BT_HCIBTUSB_MTK=y
+```
+
+
 
 ---
 
