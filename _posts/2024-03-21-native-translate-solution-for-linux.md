@@ -5,6 +5,8 @@ date: 2024-03-21
 
 # Linux 平台本地翻译解决方案
 
+**推荐使用 `pipx` 安装，避免造成全局包管理的混乱。**
+
 离线翻译工具：
 
 [argos-translate](https://github.com/argosopentech/argos-translate)

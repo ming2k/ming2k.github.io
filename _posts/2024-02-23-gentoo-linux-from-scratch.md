@@ -11,9 +11,11 @@ date: 2024-02-23
 
 ## 烧录镜像
 
-## 内核编译
+安装 Gentoo 的 Live 镜像要求有 Linux 的基本工具。这里可以选择 Ubuntu 进行安装 Gentoo 。
 
-### 手动编译
+## 内核编译及引导
+
+### 手动编译 + EFI Stub
 
 编译安装：
 
@@ -30,39 +32,83 @@ make install
 cp ./arch/x86/boot/bzImage /efi/EFI/gentoo/bzImage.efi
 # initramfs
 dracut /efi/EFI/gentoo/initrd.cpio.gz --kver <kernel_version>
+# <kernel version> 为 `/lib/modules/` 下的目录名
+# for example 
+dracut /efi/EFI/gentoo/initrd.cpio.gz --kver  6.6.30-gentoo-x86_64
 # 注册 efi （仅需第一次）
+# 这里要根据情况对具体参数进行修改
 efibootmgr --create --disk /dev/nvme1n1 --label "Gentoo" --loader "\EFI\gentoo\bzImage.efi" -u 'root=UUID=97ffc05a-6098-4af9-9d61-a40f403fffca initrd=\EFI\gentoo\initrd.cpio.gz'
 ```
 
-### install-kernel 安装（OpenRC）
+### install-kernel 安装（OpenRC） + GRUB
 
-需要依赖 `install-kernel` ，如果使用 OpenRC 请选择 [debian的内和安装方式](https://wiki.gentoo.org/wiki/Installkernel#Debian.27s_installkernel)，而不是 systemd 的方式。
+详情查看 [Installkernel - Gentoo](https://wiki.gentoo.org/wiki/Installkernel) 
 
-关于配置，首先是 `/etc/kernel/install.conf` 中编辑：
+## 维护
 
-```conf
-layout=grub
-initrd_generator=dracut
-uki_generator=dracut
-```
+### 更新内核及引导
 
-改配置针对 grub 配置。
+#### 手动编译 + EFI Stub
 
+1. 更新 `.config` 。将之前 `/usr/src/linux-<old_version>` 目录下通过 `make menuconfig` 产生的 `.config` 拷贝的 `/usr/src/linux-<new_version>` 的目录下，并执行下述命令更新 `.config`：
 
-同时修改对于 `installkernel` 的 `use` 关键字，删除 `systemd` ：
+    ```sh
+    make oldconfig
+    ```
 
-file: /etc/portage/package.use/installkernel
+2. 编译安装：
 
-```use
-sys-kernel/installkernel    -systemd dracut grub
-```
+    ```sh
+    make -j12 && make modules_install
+    ```
 
-这时候运行内核安装 `make install` 就能正确生成我们需要的 `vmlinuz`、`config`、`system.map` 等文件。
+3. 跟新引导关联的文件：
+
+    ```sh
+    cp ./arch/x86/boot/bzImage /efi/EFI/gentoo/bzImage.efi
+    dracut /efi/EFI/gentoo/initrd.cpio.gz --kver <kernel_version>
+    ```
+
+4. 重启系统
 
 ## Trouble
 
-**MT7921蓝牙在Gentoo下不工作**
+**MT7921蓝牙不工作**
 
 https://linux-hardware.org/?id=pci:14c3-7961-1a3b-4680
 
-硬件问题
+Linux驱动不支持MT7921
+
+---
+
+**触摸板不工作**
+
+参考：https://wiki.gentoo.org/wiki/Synaptics
+
+---
+
+ **obs无法录屏**
+
+obs没有开启 pipewire use 标记
+
+---
+
+**ibus输入法连续触发的问题**
+
+安装 `app-i18n/im-chooser`
+
+---
+
+**VSCode 无法输入中文**
+
+删除 vscode desktop 文件`Exec`后面的参数：
+
+```sh
+sudo nvim /usr/share/applications/code.desktop
+```
+
+保留最后像这样：
+
+```desktop
+Exec=/usr/bin/vscode %F
+```
