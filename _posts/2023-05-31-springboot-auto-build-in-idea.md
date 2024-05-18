@@ -1,8 +1,8 @@
 ---
-title: \"IDEA & SpringBoot\" auto build
+title: springboot auto build in idea
 ---
 
-# IDEA & SpringBoot Auto Build
+# SpringBoot Auto Build in Idea
 
 1. Add the `SpringBoot Devtools` dependency.
 

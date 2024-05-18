@@ -15,34 +15,29 @@ Libvirt 提供了软件集合用于方便管理多种虚拟机和虚拟化。
 
 ## Install
 
-安装 `libvirt` 和 `virt-manager` 。
+安装 `libvirt` 和 `virt-manager` ：
 
 ```sh
 # edk2-ovmf is to support UEFI
 # swtpm is to support for TPM
 sudo pacman -S qemu-full virt-manager edk2-ovmf swtpm
-sudo systemctl enable --now libvirtd
 ```
 
 The KVM/QEMU driver is primary libvirt driver.
 
-## Config
+启用服务：
 
-启用服务
-
-```
-systemctl enable --now libvirtd.service
+```sh
+sudo systemctl enable --now libvirtd
 ```
 
-将用户加入到 `libvirt` 组中以获得 `libvirt`  的操作权限。
+将用户加入到 `libvirt` 组中以获得 `libvirt`  的操作权限：
 
 ```sh
 usermod -a -G libvirt $your_username
 ```
 
-## Libvirt 使用教程
-
-### 创建一个虚拟机
+## 使用 libvirt 创建一个虚拟机
 
 1. 在 xml 中定义虚拟机资源：
 
@@ -100,7 +95,8 @@ usermod -a -G libvirt $your_username
             <qemu:arg value='type=q35' />
         </qemu:commandline>
     </domain>
-```
+	```
+
 
 2. 用 `virtsh` 工具启动虚拟机：
 
@@ -109,7 +105,7 @@ usermod -a -G libvirt $your_username
     virtsh define $XML_FILE
     # 根据定义文件的虚拟机名称，启动虚拟机
     virsh start ubuntu
-```
+	```
 
 3. 控制虚拟机行为：
 
@@ -122,13 +118,15 @@ usermod -a -G libvirt $your_username
     virsh managedsave ubuntu
     ```
 
-### 更多
+> 提示：` libvirt` 的 image 默认存储到`/var/lib/libvirt/images`
 
-` libvirt`  的 image 默认存储到`/var/lib/libvirt/images`
-
-## Virt Manger 创建虚拟机
+## 使用 Virt Manger 创建虚拟机
 
 virt-manger 具有可视化图形界面，更方便使用。
+
+```sh
+systemctl enable virtnetworkd
+```
 
 启动网卡：
 

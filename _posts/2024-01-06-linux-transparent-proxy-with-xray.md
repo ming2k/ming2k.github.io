@@ -9,15 +9,17 @@ date: 2024-01-06
 
 什么是透明代理（tproxy，Transparent Proxy），其本质就是不再使用端对端（以及协议对协议，属于应用层）传输；而透明代理则代理整个网卡（属于传输层），所有经过网卡的流量均会走代理，这个技术的底层由Linux内核的TPROXY功能支持。
 
-## 方案思路
+## 操作
+
+### 方案思路
 
 参考：https://xtls.github.io/document/level-2/tproxy_ipv4_and_ipv6.html
 
 大致思路是使用：使用Netfilter（Linux内核提供的网络操作相关的框架）的工具iproutes，ipnftables（iptables替代品），将网络请求全部路由到xray进行代理。
 
-## Xray配置
+### Xray配置
 
-### 客户端
+**客户端**
 
 ```json
 {
@@ -159,20 +161,20 @@ date: 2024-01-06
 }
 ```
 
-### 服务端
+**服务端**
 
 正常配置，无额外要求。
 
-## 系统设置
+### 客户端系统设置
 
-### 手动
-
-设置：
+iproute 设置路由表策略：
 
 ```sh
 # 设置策略路由 v4
-sudo ip rule add fwmark 1 table 100
-sudo ip route add local 0.0.0.0/0 dev lo table 100
+# 添加路由规则：把防火墙标记值为 1 的数据包路由到路由表 100 进行处理。
+sudo ip rule add fwmark 1 table 104
+# 添加路由规则：把所有的IPv4流量（0.0.0.0/0）都通过本地回环接口 lo 进行处理。
+sudo ip route add local 0.0.0.0/0 dev lo table 104
 
 # 设置策略路由 v6
 sudo ip -6 rule add fwmark 1 table 106
@@ -184,15 +186,14 @@ sudo ip -6 route add local ::/0 dev lo table 106
 
 1. `sudo ip route add local default dev lo table 100`：
 
-   - `sudo`: 以超级用户权限执行命令。
    - `ip`: 是用于配置网络设备和路由表的工具。
    - `route add`: 添加路由表项的命令。
    - `local default`: 表示将所有本地流量（Local）指向默认（Default）的本地回环设备（lo），即路由到本地机器上。
    - `dev lo`: 指定本地回环设备作为出口接口，表示流量不会通过实际的网络接口，而是在本地环回。
    - `table 100`: 将该路由表项添加到表号为100的路由表中。
-
+   
    这一行代码的作用是将所有本地流量通过本地回环设备处理，并将相关路由表项添加到表号为100的路由表中。
-
+   
 2. `sudo ip rule add fwmark 1 table 100`：
 
    - `sudo`: 以超级用户权限执行命令。
@@ -226,19 +227,16 @@ table inet xray {
         chain prerouting {
                 type filter hook prerouting priority 0
                 policy accept
-                # don't handle the packages that the destination is current computer.
-                ip daddr { 127.0.0.0/8, 224.0.0.0/4, 255.255.255.255 } return
-                ip6 daddr { ::1, fe80::/10 } return
-                # exclude the docker
+                # don't handle LAN packages
+                ip daddr { 127.0.0.0/8, 224.0.0.0/4, 192.168.0.0/16, 255.255.255.255 } return
+                ip6 daddr { ::1, fd00::/8, fe80::/10 } return
+                # don't handle packets from virt
+                iifname "virbr0" return
+                # don't handle packets from docker
                 ip daddr { 172.16.0.0/12 } return
-                # exclude the virtual machine
-                ip daddr { 192.168.122.0/24 } return
-                # don't handle the packages that the destination is device in wlan
-                ip daddr 192.168.0.0/16 return
-                ip6 daddr fd00::/8 return
-                # don't handle the packages marked 255, 255 mark express the package has been handled by xray.
+                # don't handle packages marked 255 by xray
                 meta mark 255 return
-                # if the above rules are not matched, the packages are accepted by 12345 which is opened by xray.
+                # mark and forward packets arriving at this rule
                 meta l4proto { tcp, udp } meta mark set 1 tproxy ip to 127.0.0.1:12345 accept
                 meta l4proto { tcp, udp } meta mark set 1 tproxy ip6 to [::1]:12345 accept
         }
@@ -248,20 +246,16 @@ table inet xray {
                 policy accept
                 # don't handle dns and mdns
                 ip protocol udp udp dport { 53, 5353 } return
-                # don't handle the packages that the destination is current computer.
-                ip daddr { 127.0.0.0/8, 224.0.0.0/4, 255.255.255.255 } return
-                ip6 daddr { ::1, fe80::/10 } return
-                # exclude the docker
+                # don't handle LAN packages
+                ip daddr { 127.0.0.0/8, 224.0.0.0/4, 192.168.0.0/16, 255.255.255.255 } return
+                ip6 daddr { ::1, fd00::/8, fe80::/10 } return
+                # don't handle packets from virt
+                iifname "virbr0" return
+                # don't handle packets from docker
                 ip daddr { 172.16.0.0/12 } return
-                # exclude the virtual machine
-                ip daddr { 192.168.122.0/24 } return
-                # don't handle the packages that the destination is device in wlan
-                ip daddr 192.168.0.0/16 return
-                ip6 daddr fd00::/8 return
-                # don't handle the packages marked 255, 255 mark express the package has been handled by xray.
+                # don't handle packages marked 255 by xray
                 meta mark 255 return
-                # if the above rules are not matched, the packages is marked 1
-                # packages marked 1 are send to 'lo' by the table, then follow prerouting chains rules
+                # mark packets arriving at this rule
                 meta l4proto { tcp, udp } meta mark set 1 accept
         }
 
@@ -281,9 +275,9 @@ table inet xray {
 nft -f /etc/nftables/xray.conf
 ```
 
-### 自动
+#### 脚本
 
-为了让上述开机自启动， `/etc/systemd/system/` 目录下创建一个名为 `tproxyrules.service`：
+编写 `/etc/systemd/system/tproxyrules.service` 作为 `systemd` 服务开机自启动：
 
 ```
 [Unit]
@@ -313,7 +307,7 @@ WantedBy=multi-user.target
 
 收：
 
-网路 -> linux网络栈 -> prerouting -> xray -> 
+网路 -> linux网络栈 -> prerouting -> (如果标为1则 xray ->) 应用 
 
 上述规则配置根据判断 mark 的位置使得我们发送包的流向改变了
 
@@ -336,8 +330,13 @@ output -> mark 1 -> prerouting（mark1根据防火墙规则会进入lo，进入l
 使用：
 
 ```
-ping -n domain
+ping -n <domain>
 ```
 
 禁止反向DNS解析就可以解决。
 
+---
+
+**virt manager 虚拟机网络问题**
+
+暂未解决

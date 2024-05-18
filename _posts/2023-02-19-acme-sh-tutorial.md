@@ -1,27 +1,26 @@
 ---
-title: acme.sh
+title: acme-sh tutorial
 excerpt: \"acme.sh\" is a shell script to get and install the cerification automatically, use ACME protocal.
 ---
 
-# ACME Shell
+# ACME-SH 教程
 
 项目地址：https://github.com/acmesh-official/
 
-## Setup on the host
+常见参考：
 
-1. 安装 acme.sh
+- [ZeroSSL.com CA 证书申请](https://github.com/acmesh-official/acme.sh/wiki/ZeroSSL.com-CA)
+- [ACME-SH DNS API](https://github.com/acmesh-official/acme.sh/wiki/dnsapi)
 
-    ```
-    curl https://get.acme.sh | sh -s email=my@example.com
-    ```
+## 安装
 
-2. 重新载入 `.bashrc`
+```sh
+curl https://get.acme.sh | sh -s email=my@example.com
+```
 
-    ```
-    source ~/.bashrc 
-    ```
+## ZeroSSL 申请证书流程
 
-3. 注册CA
+1. 注册CA
 
     这个注册并非账号的注册，该邮箱为申请证书必填项，仅用于证书办法机构向我们指定邮箱发送通知和更新，可以通过下述命令来指定邮箱：
 
@@ -29,64 +28,44 @@ excerpt: \"acme.sh\" is a shell script to get and install the cerification autom
     acme.sh  --register-account -m my@example.com --server zerossl
     ```
 
-    https://github.com/acmesh-official/acme.sh/wiki/ZeroSSL.com-CA
+    详情请看：
 
-4. 申请证书
+2. 申请证书
 
-    申请证书需要先验证域名所有权，根据不同的CA（证书颁发机构）其方式可能不同。比如可以通过HTTP、DNS、邮箱等方式，这里推荐使用DNS方式验证。这个是`acme.sh`官方可参考的DNS验证文档：[ACME-SH DNS API](https://github.com/acmesh-official/acme.sh/wiki/dnsapi)。
+    申请证书需要验证域名所有权，根据不同的CA（证书颁发机构）其方式可能不同，可以通过HTTP、DNS、邮箱等方式；这里推荐使用DNS方式验证，这里以 cloudflare 举例：
 
-    若以DNS的方式验证域名所有权，需要确定你的DNS解析服务由哪个解析服务商提供，比如你在阿里云设置域名解析，那你的解析服务提供商就是阿里。
+    ```sh
+    export CF_Key="generated_key"
+    export CF_Email="test@example.com"
+    ```
 
-    1. 配置DNS解析服务商认证授权参数
+    `CF_Key` 可以在 [api-token - cloudflare](https://dash.cloudflare.com/profile/api-tokens) 链接下创建；
 
-       1. 阿里云
+    `CF_Zone_Key` 在每个域名的 overview 界面的右下角。
 
-           登录你的[阿里云账号](https://ram.console.aliyun.com/manage/ak)获取你的API key及其Secret，获取阿里云的 AccessKey 及其 Secret ，建议创建使用子帐户生成 AccessKey ，给子账户分配管理云解析（DNS）的权限。
+    这个是`acme.sh`官方可参考的DNS验证文档：。
 
-           *子账户的AccessKey Secret只有创建时能看见。*
+3. 生成证书
 
-           拿到Key和Secret后，到终端生成环境变量：
+    `-d `选项的参数是要申请证书的域名，但请根据上述设置的验证授权的环境来设置正确的DNS域名解析服务商，在`--dns`选项中指定参数，不同域名解析服务商的代号不同：
 
-            ```sh
-            export Ali_Key="ali_accesskey"
-            export Ali_Secret="ali_accesskey_secret"
-            ```
+    - Cloudflare: dns_cf
+    - Ali: dns_ali
 
-       2. Cloudflare
+    具体可以参考[dnsapi](https://github.com/acmesh-official/acme.sh/wiki/dnsapi)
 
-           同理，Cloudflare创建key并设置环境变量：
+    有需求可直接生成一个通配符域名证书：
 
-           ```sh
-           export CF_Key="generated_key"
-           export CF_Email="test@example.com"
-           ```
-    
-    2. 生成证书
-    
-        `-d `选项的参数是要申请证书的域名，但请根据上述设置的验证授权的环境来设置正确的DNS域名解析服务商，在`--dns`选项中指定参数，不同域名解析服务商的代号不同：
-    
-        - Cloudflare: dns_cf
-        - Ali: dns_ali
-        
-        具体可以参考[dnsapi · acmesh-official/acme.sh Wiki](https://github.com/acmesh-official/acme.sh/wiki/dnsapi)
-        
-        ```sh
-        acme.sh --issue --dns dns_ali -d example.com -d www.example.com
-        ```
-        
-        有需求可直接生成一个通配符域名证书：
-        
-        ```sh
-        acme.sh --issue --dns dns_ali -d '*.example.com'
-        ```
-        
-        默认情况下，生成的证书的目录`.acme.sh`目录下。
+    ```sh
+    acme.sh --issue --dns dns_ali -d '*.example.com'
+    ```
 
-5. 执行定时任务
+    默认情况下，生成的证书的目录`.acme.sh`目录下。
 
-   
+4. 执行定时任务。
 
-证书生成完成之后**acme.sh** 会自动记保存API ID 和 API key，会保存到 `~/.acme.sh/account.conf`，下次再使用阿里云API的时候不需要再指定阿里云的 AccessKey了。
+
+证书生成完成之后 **acme.sh** 会自动记保存API ID 和 API key，会保存到 `~/.acme.sh/account.conf`，下次再使用阿里云API的时候不需要再指定阿里云的 AccessKey了。
 
 ## 三、安装证书
 

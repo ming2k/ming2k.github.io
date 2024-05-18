@@ -48,6 +48,13 @@ efibootmgr --create --disk /dev/nvme1n1 --label "Gentoo" --loader "\EFI\gentoo\b
 
 ### 更新内核及引导
 
+默认情况下，Gentoo 的内核源码存放在 `/usr/src` ，该目录下有一个 symlink 指向默认的 linux 内核版本，你可以通过删除并创建新的符号连接更新它，也可以通过下述命令行自动更新它：
+
+```sh
+eselect kernel list
+eselect kernel set <number>
+```
+
 #### 手动编译 + EFI Stub
 
 1. 更新 `.config` 。将之前 `/usr/src/linux-<old_version>` 目录下通过 `make menuconfig` 产生的 `.config` 拷贝的 `/usr/src/linux-<new_version>` 的目录下，并执行下述命令更新 `.config`：
@@ -75,14 +82,12 @@ efibootmgr --create --disk /dev/nvme1n1 --label "Gentoo" --loader "\EFI\gentoo\b
 
 **MT7921蓝牙不工作**
 
-把配置的这两个打开：
+内核配置中配置：
 
 ```
 CONFIG_BT_MTK=m
 CONFIG_BT_HCIBTUSB_MTK=y
 ```
-
-
 
 ---
 
