@@ -1,11 +1,15 @@
 ---
-title: top command
+title: top command tutorial
 date: 2023-08-07
 ---
 
-# Top Command
+# Top Command Tutorial
 
-The top program provides a dynamic real-time view of a running system.
+## Synopsis
+
+`top` is a command belonging to `procps-ng` package **to display Linux processes**.
+
+
 
 推荐使用 `man` 查看帮助手册：
 
@@ -17,7 +21,7 @@ man top
 
 ### 概览信息
 
-```
+```log
 top - 16:12:42 up 23:49,  2 users,  load average: 1.83, 1.52, 1.29
 Tasks: 399 total,   3 running, 396 sleeping,   0 stopped,   0 zombie
 %Cpu(s):  5.7 us,  1.1 sy,  0.0 ni, 92.8 id,  0.1 wa,  0.2 hi,  0.1 si,  0.0 st 
@@ -32,7 +36,7 @@ MiB Swap:  32768.0 total,  32765.5 free,      2.5 used.  24399.6 avail Mem
 top - 16:12:42 up 23:49,  2 users,  load average: 1.83, 1.52, 1.29
 ```
 
-负荷的数值：1表示1个CPU的线程满负荷。比如我的电脑 6 个性能核心 8个能效核心，每个性能核心2个线程，每个能效核心1个线程，共计20线程， 所以电脑满负载为20。
+关于平均负载（load average）计算方式：上限为CPU逻辑核心数量（硬件线程数量，包含超线程生成的），比如 `1.83` 意味负载为 1.83 个逻辑核心。
 
 **第二行：进程状态**
 
@@ -44,28 +48,9 @@ Tasks: 399 total,   3 running, 396 sleeping,   0 stopped,   0 zombie
 **第三行：CPU状态**
 
 ```
-Cpu使用时间占用百分比：
-用户空间（user space），
-内核空间（system），
-修正的用户进程（nice），
-空闲（idle），
-等待（wait），
-硬中断（hard interrupt），
-软中断（soft interrupt），
-虚拟化偷走的时间（stolen）
+Cpu使用时间占用百分比：用户空间（user space），内核空间（system），修正的用户进程（nice），空闲（idle），等待（wait），硬中断（hard interrupt），软中断（soft interrupt），虚拟化偷走的时间（stolen）
 %Cpu(s):  5.7 us,  1.1 sy,  0.0 ni, 92.8 id,  0.1 wa,  0.2 hi,  0.1 si,  0.0 st 
 ```
-
-现在解释缩写：
-
-- us（user）：用户进程使用CPU的时间。
-- sy（system）：操作系统内核执行系统级任务的时间。
-- ni（nice）：优先级被调整的（niced）进程占用CPU时间的百分比。
-- id:（idle）：CPU空闲的百分比，表示CPU没有运行任务的时间。
-- wa（wait）：等待I/O的进程占用CPU时间的百分比，即等待磁盘或网络I/O完成的时间。
-- hi（hardware interrupt）：硬中断（Hardware Interrupt）占用CPU时间的百分比，表示处理硬件设备引发的中断。
-- si（software interrupt）：软中断（Software Interrupt）占用CPU时间的百分比，由操作系统内核发起的中断。
-- st（stolen）：被偷取（stolen）的CPU时间的百分比，用于虚拟化环境中，表示被其他虚拟机“偷取”的时间。
 
 这里讲一下，niceness（优先级）的概念：
 
