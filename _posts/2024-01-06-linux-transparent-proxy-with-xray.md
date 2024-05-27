@@ -275,7 +275,7 @@ table inet xray {
 nft -f /etc/nftables/xray.conf
 ```
 
-#### 脚本
+## 脚本
 
 编写 `/etc/systemd/system/tproxyrules.service` 作为 `systemd` 服务开机自启动：
 

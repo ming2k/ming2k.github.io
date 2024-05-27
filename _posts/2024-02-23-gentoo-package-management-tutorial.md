@@ -27,6 +27,9 @@ emerge --searchdesc <package_description>
 # for example: 
 # emerge -s '%^python$' # search using a regex
 # emerge -s '@net-ftp' # search catagory
+
+# 这里强烈推荐使用 eix ，速度更快，信息更全面
+eix <package_name>
 ```
 
 安装
@@ -83,7 +86,12 @@ sudo emerge -c
 
 ```sh
 sudo eclean distfiles	# Clean files from /var/cache/distfiles
+# or --deep to clean more
+sudo eclean -d distfiles
+
 sudo eclean packages	# Clean files from /usr/portage/packages
+# or --deep to clean more
+sudo eclean -d packages
 ```
 
 ## Equery

@@ -3,6 +3,7 @@ title: english phonetic symbol
 date: 2023-12-13
 typora-root-url: ../
 typora-copy-images-to: ../assets/images/
+
 ---
 
 
@@ -13,30 +14,30 @@ typora-copy-images-to: ../assets/images/
 
 该文章将致力于搞清楚英语音标的意义、发展、各种音标系统的异同、以及发音技巧和规律。
 
-## Introductory Common Sense
-
-### 音素
-
-我们所看到的**音标是由一个个音素（Phoneme）组成的**音素是根据语音的自然属性划分出来的最小语音单位，通俗讲是人耳能区分的不同音声单位，为了以文本形式记录这些音素便发展出了表示声音的字母（Phonetic Alphabet），由于音素字母的样式或数量，以及发音规律等不同则组成了不同的音标系统。
-
-*音素为百度百科的翻译、维基百科翻译为音位，个人比较认可音素，因此文章中统一使用音素。*
-
-## 意义
+## 音标的意义
 
 音标使得声音这种具有时间属性的事物可以通过人们可理解的文本方式得以记录。而作为理解他的我们只需要掌握音标系统则可以再次复现出发音。
 
 > 个人感想，人对持久（或者永久）真的是有一种来自本能的追求。
 
-## 发展历史
+## 音标的最小单位——音素
+
+我们所看到的**音标是由一个个音素（Phoneme）组成的**音素是根据语音的自然属性划分出来的最小语音单位，通俗讲是人耳能区分的不同音声单位，为了以文本形式记录这些音素便发展出了表示声音的字母（Phonetic Alphabet），由于音素字母的样式或数量，以及发音规律等不同则组成了不同的音标系统。
+
+*音素为百度百科的翻译、维基百科翻译为音位，个人比较认可音素，因此文章中统一使用音素。*
+
+## 音标系统的发展历史
+
+常见
 
 下述列出了对于英语比较重要的时间和事件。
 
 | Time | Event                                                        |
 | ---- | ------------------------------------------------------------ |
-| 1828 | ***American Dictionary*** (First edition) by Noah Webster    |
-| 1897 | ***International Phonetic Association*** formed              |
-| 1917 | ***English Pronouncing Dictionary*** (First Edition) by Daniel Jones |
-| 1944 | ***A Pronouncing Dictionary of American English*** by John Samuel Kenyon, Thomas Albert Knott |
+| 1828 | **American Dictionary** (First edition) by Noah Webster      |
+| 1897 | **International Phonetic Association** formed                |
+| 1917 | **English Pronouncing Dictionary** (First Edition) by Daniel Jones |
+| 1944 | **A Pronouncing Dictionary of American English** by John Samuel Kenyon, Thomas Albert Knott |
 
 根据作者名字，如今我们通常把他们的音标系统分别称作Webster音标、DJ音标、KK音标；从发展的角度来断定如今某些字典使用的音标为其中上述一种音标系统是不合适的，比如牛津字典，以下是官方原文(https://www.oxfordlearnersdictionaries.com/external/pdf/english/OALD10_phons_GL.pdf)：
 
@@ -61,19 +62,17 @@ typora-copy-images-to: ../assets/images/
 
 *Webster采用专用的音标系统，至于为什么不采用IPA-based，从历史上可以发现其出现早于IPA。*
 
-## 音标学习
-
-**该文章以OALD（Oxford Advanced Leaner's Dinctioanry）音标为准**，权威、合理可靠，基于IPA。
-
-## 国际音标
+## 国际音标系统
 
 ![IPA_chart_2020](/assets/images/IPA_chart_2020.svg)
 
-### [英式音标](https://www.oxfordlearnersdictionaries.com/about/english/pronunciation_english)
+## Oxford Dictonary 音标系统
 
-**Vowels**
+**该节以介绍 Oxford Dictionary 音标系统**，权威且基于IPA。
 
-22个元音
+
+
+### 英式音标
 
 | Phonetic Symbol | Word   | Pronunciation                 |
 | --------------- | ------ | ----------------------------- |
@@ -101,8 +100,6 @@ typora-copy-images-to: ../assets/images/
 | ʊə              | pure   | /pjʊə(r)/ *(British English)* |
 
 **Consonants**
-
-24个辅音
 
 | Phonetic Symbol | Word   | Pronunciation |
 | --------------- | ------ | ------------- |
@@ -139,7 +136,7 @@ typora-copy-images-to: ../assets/images/
 
 **/ː/** a length mark 
 
-### [美式音标](https://www.oxfordlearnersdictionaries.com/about/pronunciation_american_english)
+### 美式音标
 
 省略
 
@@ -199,9 +196,7 @@ English Vowels
 
 ### 请抛弃KK音标
 
-**TL; DR: 不推荐使用KK音标！！！**
-
-**KK部分表示不遵守IPA标准，增加学习成本！**
+**TL; DR: KK部分音标表示表示不遵守IPA标准，增加学习成本！**
 
 | Word        | OALD Symbal | KK Symbal |
 | ----------- | ----------- | --------- |

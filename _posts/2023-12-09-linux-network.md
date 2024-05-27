@@ -3,7 +3,7 @@ title: linux network
 date: 2023-12-09
 ---
 
-# Linux network
+# Linux Network
 
 关于网络服务 
 

@@ -72,3 +72,16 @@ $ ls mydoc2.
 ```
 
 上述情况在Gnome下 `alt` 可能被全局占用，请在 Setting -> Keyboard -> Special Character Entry 切换快捷键。
+
+## Config File
+
+配置文件路径：
+
+- /bin/bash The bash executable
+- /etc/profile The systemwide initialization file, executed for login shells
+- ˜/.bash_profile The personal initialization file, executed for login shells
+- ˜/.bashrc The individual per-interactive-shell startup file
+- ˜/.bash_logout The  individual  login shell cleanup file, executed when a login shell exits
+- ˜/.inputrc Individual readline initialization file
+
+GDM用户登陆测试结论：不会执行 `~/.bash_profile`，`~/.xprofile` 以及 `~/.profile` 。老老实实用 `~/.bashrc`
