@@ -7,17 +7,21 @@ date: 2024-02-23
 
 该教程致力于Gentoo包管理教学使用。
 
-## Portage CMD
+## 查找
 
-### Emerge
+### emerge
 
-同步安装包信息：
+查看组内安装了哪些包：
 
 ```sh
-emerge --sync
+emerge -pqeO <set_name>
+
+# for example: 
+# emerge -pqeO @system # list system required pakcages
+# emerge -pqeO @world # list world-wide pakcages 
 ```
 
-搜索
+### equery
 
 ```sh
 emerge -s <package_name>
@@ -27,9 +31,24 @@ emerge --searchdesc <package_description>
 # for example: 
 # emerge -s '%^python$' # search using a regex
 # emerge -s '@net-ftp' # search catagory
+```
 
-# 这里强烈推荐使用 eix ，速度更快，信息更全面
+### eix
+
+```sh
 eix <package_name>
+```
+
+
+
+## Portage CMD
+
+### Emerge
+
+同步安装包信息：
+
+```sh
+emerge --sync
 ```
 
 安装

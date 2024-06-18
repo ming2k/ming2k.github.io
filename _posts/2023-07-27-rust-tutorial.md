@@ -5,72 +5,57 @@ date: 2023-07-27
 
 # Rust Tutorial
 
-Rust 教程
+To begin our hacking journey, we need to set up Rust. The official Rust documentation recommends using `rustup` which includes . For more details, check [this guide](https://www.rust-lang.org/tools/install).
 
-## 安装
+## Get Started with a Simple Example
 
-这里安装 `Rustup` ，`Rustup` 是一组套件，其中包含 `cargo`、`clippy`、`rust-docs`、`rust-std`、`rustc` 等工具，同时可以管理这些工具。
+1. Select an appropriate workspace, create a file named `main.rs`,  and add the following code to the file:
 
-**for Linux**
+    ```rust
+    fn main() {
+        println!("Hello, world!");
+    }
+    ```
 
-```sh
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-rustup default stable
-```
+2. Compile the above mentioned files:
 
-**For Windows**
+    ```sh
+    rustc main.rs
+    ```
 
-```powershell
-winget install Rustlang.Rustup
-```
+    `rustc` will generate a file with the same base name, also known as the filename stem, as the compiled file.
 
-检查：
+3. Run the executable file:
 
-```powershell
-rustc --version
-```
+    ```sh
+    ./main
+    # for Windows
+    ./mian.exe
+    ```
 
-## Get Started
+    The Console will print `Hello, world!`.
 
-### Simple Example
+## Using `Cargo` to Manage Your Project
 
-创建 `main.rs` 文件，然后写入如下内容：
+`Cargo` is the package manager and build system for Rust. So you should know the basic commands if you want to mantain the project systematically.
 
-```rust
-fn main() {
-    println!("Hello, world!");
-}
-```
+### Simple and Useful Commands 
 
-编译这个文件：
-
-```powershell
-rustc main.rs
-```
-
-运行编译后的文件
-
-```
-.\main.exe
-```
-
-### Manage Project by Cargo
-
-Cargo 是 Rust 的**构建工具**和**包管理工具**。
-
-创建项目：
+Create a new project with scaffold: 
 
 ```sh
 cargo new <your_project_name>
 ```
 
-运行项目：
+Run your project: 
 
 ```sh
 cargo run
 ```
 
-## 开发环境
+## Choosing an IDE
+
+
 
 推荐使用 VSCode + WSL 开发，以下针对 VSCode + WSL 环境配置做介绍。
 
@@ -83,43 +68,6 @@ VSCode 使用 WSL 作为开发环境的工具，必备。
 **rust-analyzer**:
 
 Rust 分析工具，必备。
-
-**CodeLLDB**:
-
-默认 `VSCode` 情况下使用 `gdb` 调试 `Rust`，但 Rust 默认使用 LLVM 作为编译器后端，使用 `gdb` 调试会出现 `Locals` 中的 `String` 类型变量的值无法显示，如下：
-
-![image-20230801143838599](./assets/image-20230801143838599.png)
-
-当安装该插件后，VSCode 默认会使用 LLDB 进行调试，效果如下：
-
-![image-20230801144115864](./assets/image-20230801144115864.png)
-
-
-
-当你安装 `CodeLLDB` 之后，可以配置`.vscode/launch.json` 设置调试的的配置：
-
-```json
-{
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "lldb",
-            "request": "launch",
-            "name": "Debug Current File",
-            "cargo": {
-                "args": [
-                    "build",
-                    "--bin=${fileBasenameNoExtension}"
-                ]
-            },
-            "args": [],
-            "cwd": "${workspaceFolder}"
-        }
-    ]
-}
-```
-
-通过 `Primary Side bar` 选择 `Run and Debugger` 选择上述的配置的名称即可调试当前打开的文件，相比寻找 `main` 函数上的按钮速度更快。
 
 ### 预先引入
 

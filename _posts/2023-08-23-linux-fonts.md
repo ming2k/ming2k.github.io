@@ -3,7 +3,7 @@ title: linux font tutorial
 date: 2023-08-23
 ---
 
-# Linux Fonts
+# Linux Font 教程
 
 该文章致力于教大家如何配置Linux操作系统的文字环境。
 

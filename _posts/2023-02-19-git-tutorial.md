@@ -337,6 +337,11 @@ git tag
 git tag -a v1.4 -m "my version 1.4"
 # 正常推送远程仓库并不会包含tag，需要加上 --tags
 git push --tags
+
+# Delete locally
+git tag -d <tag_name>
+# Delete remotely
+git push origin --delete <tag_name>
 ```
 
 ## Q&A

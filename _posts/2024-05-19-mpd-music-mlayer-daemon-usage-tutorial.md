@@ -1,9 +1,9 @@
 ---
-title: how to use mpd
+title: mpd music mlayer daemon usage tutorial
 date: 2024-05-19
 ---
 
-# 如何使用 `MPD`
+# `MPD` 音乐播放器守护进程教程
 
 [MPD](https://www.musicpd.org/)（Music Player Daemon）是音乐播放器服务端应用，顾名思义我们还需要安装客户端，比如 `mpc` 、 `ncmpc` 。
 
@@ -82,7 +82,26 @@ date: 2024-05-19
 
 ## 客户端使用
 
-`mpc` 和 `ncmpc` 自行摸索。
+The client of `mpd` includes `mpc`, `ncmpc`, `ncmpcpp`, etc. 
 
+Both `mpc` and `ncmpc` are official clients, with the main difference being that `ncmpc` is based on `ncurses`. Additionally, `ncmpcpp`, developed in C++, is a community-promoted client.
 
+### mpc
 
+mpc is a fundamental tool that includes all basic functions, making it essential to learn how to use it.
+
+#### playlist commands
+
+Load specific playlist:
+
+```sh
+mpc load <playlist_name>
+```
+
+Add a song into playlist:
+
+```
+mpc addplaylist <playlist_name> <song_name>
+```
+
+Playlists are saved as files that is located in `~/.config/mpd/playlists`, allowing you to achieve the same results by manipulating the files directly as you would with commands.

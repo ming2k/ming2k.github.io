@@ -1,16 +1,17 @@
 ---
 title: acme-sh tutorial
 excerpt: \"acme.sh\" is a shell script to get and install the cerification automatically, use ACME protocal.
+date: 2023-02-19
 ---
 
-# ACME-SH 教程
+# ACME.SH 教程
 
 项目地址：https://github.com/acmesh-official/
 
 常见参考：
 
-- [ZeroSSL.com CA 证书申请](https://github.com/acmesh-official/acme.sh/wiki/ZeroSSL.com-CA)
-- [ACME-SH DNS API](https://github.com/acmesh-official/acme.sh/wiki/dnsapi)
+- [ZeroSSL.com CA 证书申请 - ACME.sh](https://github.com/acmesh-official/acme.sh/wiki/ZeroSSL.com-CA)
+- [ACME-SH DNS API - ACME.sh](https://github.com/acmesh-official/acme.sh/wiki/dnsapi)
 
 ## 安装
 
@@ -27,8 +28,6 @@ curl https://get.acme.sh | sh -s email=my@example.com
     ```sh
     acme.sh  --register-account -m my@example.com --server zerossl
     ```
-
-    详情请看：
 
 2. 申请证书
 

@@ -1,4 +1,9 @@
-# NPM
+---
+title: npm tutorial
+date: 2024-05-29
+---
+
+# NPM Tutorial
 
 ## CLI
 
@@ -9,6 +14,14 @@ npm update <package> # 更新指定包
 npm install -g npm-check # 先全局安装 npm-check
 npm-check -u             # 查询当前项目下的包更新
 npm-check -u -g          # 查询全局安装的包更新
+```
+
+### 查看
+
+查看包被谁依赖：
+
+```sh
+npm ls inflight --depth infinity
 ```
 
 ## Config

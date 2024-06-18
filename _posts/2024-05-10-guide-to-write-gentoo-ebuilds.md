@@ -8,3 +8,11 @@ date: 2024-05-10
 refers:
 
 - [Basic Guide to Write Gentoo Ebuilds - Gentoo](https://wiki.gentoo.org/wiki/Basic_guide_to_write_Gentoo_Ebuilds/zh-cn)
+
+
+
+```sh
+sudo pkgdev manifest -m
+ebuild /path/to/hifetch-1.0.0.ebuild manifest
+```
+
