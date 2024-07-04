@@ -36,13 +36,13 @@ typora-copy-images-to: ../assets/images/
 
 底座、键帽（有卡口用以卡上下面的两个交错的弹性所料支架）俯视图：
 
-<img src="/assets/images/IMG_20240419_184511.jpg" alt="IMG_20240419_184511" style="zoom: 25%;" />
+<img src="/assets/images/IMG_20240419_184511.jpg" alt="IMG_20240419_184511" style="zoom: 10%;" />
 
 
 
 底座侧视图：
 
-<img src="/assets/images/download_file (2).jpeg" alt="download_file (2)" style="zoom:20%;" />
+<img src="/assets/images/download_file (2).jpeg" alt="download_file (2)" style="zoom: 10%;" />
 
 ### 大的夹（Large Clip）
 

@@ -7,8 +7,6 @@ date: 2024-05-27
 
 旨在简略介绍常用命令的使用方法。
 
-
-
 ## 进程查询
 
 The `ss` command is `iproute2` package and stands for "Socket Statistics".

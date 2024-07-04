@@ -1,3 +1,10 @@
+---
+title: wx-mini-programer
+date: 2023-02-19
+---
+
+
+
 # 微信小程序
 
 第一次进入页面会加载 onLoad 和 onShow

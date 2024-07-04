@@ -7,6 +7,12 @@ date: 2024-04-29
 
 应用安装的位置：`/var/lib/flatpak`
 
+更新：
+
+```sh
+flatpak update
+```
+
 卸载：
 
 ```sh

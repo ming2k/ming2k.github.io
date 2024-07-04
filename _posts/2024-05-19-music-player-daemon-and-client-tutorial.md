@@ -1,13 +1,15 @@
 ---
-title: mpd music mlayer daemon usage tutorial
+title: music player daemon and clients tutorial
 date: 2024-05-19
 ---
 
-# `MPD` 音乐播放器守护进程教程
+# MPC&Clients 教程
 
 [MPD](https://www.musicpd.org/)（Music Player Daemon）是音乐播放器服务端应用，顾名思义我们还需要安装客户端，比如 `mpc` 、 `ncmpc` 。
 
-## 安装及使用
+## MPD
+
+### 安装
 
 1. 安装MPD
 
@@ -29,7 +31,7 @@ date: 2024-05-19
    sudo emerge -a mpc ncmpc
    ```
 
-## 配置
+### 配置
 
 系统级别的服务的配置文件路径为 `/etc/mpd.conf` ，用户级别的服务路径为 `~/.config/mpd/mpd.conf` 。
 
@@ -80,7 +82,7 @@ date: 2024-05-19
     systemctl restart --user --now mpd
     ```
 
-## 客户端使用
+## Clients
 
 The client of `mpd` includes `mpc`, `ncmpc`, `ncmpcpp`, etc. 
 
@@ -100,8 +102,11 @@ mpc load <playlist_name>
 
 Add a song into playlist:
 
-```
+```sh
 mpc addplaylist <playlist_name> <song_name>
 ```
 
-Playlists are saved as files that is located in `~/.config/mpd/playlists`, allowing you to achieve the same results by manipulating the files directly as you would with commands.
+> [!TIP]
+>
+> Playlists are saved as files that is located in `~/.config/mpd/playlists`, you can append song's names to the playlist file to add the songs into the playlist.
+

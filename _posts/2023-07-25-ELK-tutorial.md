@@ -1,5 +1,5 @@
 ---
-title: ELK
+title: ELK tutorial
 date: 2023-07-25
 ---
 

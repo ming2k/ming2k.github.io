@@ -1,5 +1,6 @@
 ---
-title: YAML
+title: YAML format tutorial
+date: 2023-02-19
 ---
 
 
