@@ -44,9 +44,9 @@ efibootmgr --create --disk /dev/nvme1n1 --label "Gentoo" --loader "\EFI\gentoo\b
 
 详情查看 [Installkernel - Gentoo](https://wiki.gentoo.org/wiki/Installkernel) 
 
-## 维护
+### 内核更新维护
 
-### 更新内核及引导
+#### 更新内核及引导
 
 默认情况下，Gentoo 的内核源码存放在 `/usr/src` ，该目录下有一个 symlink 指向默认的 linux 内核版本，你可以通过删除并创建新的符号连接更新它，也可以通过下述命令行自动更新它：
 
@@ -55,7 +55,7 @@ eselect kernel list
 eselect kernel set <number>
 ```
 
-#### 手动编译 + EFI Stub
+##### 手动编译 + EFI Stub
 
 1. 更新 `.config` 。将之前 `/usr/src/linux-<old_version>` 目录下通过 `make menuconfig` 产生的 `.config` 拷贝的 `/usr/src/linux-<new_version>` 的目录下，并执行下述命令更新 `.config`：
 
@@ -88,6 +88,8 @@ eselect kernel set <number>
 CONFIG_BT_MTK=m
 CONFIG_BT_HCIBTUSB_MTK=y
 ```
+
+仍有问题，后续持续修改内核配置，添加对各种蓝牙驱动协议支持（一通乱加），Sony的蓝牙耳机的LDAC可以用了。
 
 ---
 

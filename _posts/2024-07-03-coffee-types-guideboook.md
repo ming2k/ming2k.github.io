@@ -1,6 +1,8 @@
 ---
 title: coffee types guide
 date: 2024-07-03
+typora-root-url: ../
+typora-copy-images-to: ../assets/images/
 ---
 
 # 咖啡品类指南
@@ -61,4 +63,4 @@ Espresso，可以翻译为“浓咖啡”，起源于意大利，因此它的萃
 - **浓缩咖啡**：1份（1-2盎司/30-60毫升）
 - **牛奶**：少量的牛奶或奶泡（约1-2盎司/30-60毫升），用于“标记”浓缩咖啡
 
-<img src="../assets/images/246e939c8e5e2983a814227d25154636.jpg" alt="img" style="zoom: 80%;" />
+<img src="/assets/images/246e939c8e5e2983a814227d25154636.jpg" alt="img" style="zoom: 80%;" />

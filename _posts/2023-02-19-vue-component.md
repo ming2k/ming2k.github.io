@@ -1,4 +1,4 @@
-# 创建组件
+# VUE Component
 
 ```ts
 // 创建实例

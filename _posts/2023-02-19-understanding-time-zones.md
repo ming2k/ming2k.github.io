@@ -1,6 +1,7 @@
 ---
 title: "Understanding Time Zones"
 excerpt: "Different regions have different times, understanding time zones can help us understand the rules of time in different regions."
+date: 2023-02-19
 ---
 
 # Time Zones

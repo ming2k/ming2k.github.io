@@ -1,4 +1,4 @@
-# Visual Studio Code Extension
+# Visual Studio Code Extension Dev
 
 本教程致力于Visual Studio Code插件教程开发。
 

@@ -1,3 +1,10 @@
+---
+title: bash shell tutorial
+date: 2024-07-07
+---
+
+
+
 # Bash Shell 入门教程
 
 在没有图形界面之前，Shell作为“外壳”与Linux内核交互。
@@ -10,6 +17,37 @@
 4. 软件复用：Linux Bash可以使用其他命令的输出作为输入，这使得用户可以将多个命令组合起来，完成更复杂的任务。
 5. 使用文本文件进行通信：Linux Bash使用文本文件作为命令和程序之间的通信方式，这使得数据交换更加简单和可靠。
 6. 程序设计应该追求可靠性和稳定性：Linux Bash的命令都被设计为可靠、稳定和健壮，以确保系统的稳定性和可靠性。
+
+## 钩子脚本
+
+
+
+### 初始化脚本
+
+也可以称作“配置 shell 的方式”，但是考虑到配置本质上是在用户输入命令之前执行的脚本，这里称作“初始化 shell 的方式”。
+
+#### 登陆方式影响初始化的配置文件
+
+根据是否为登陆方式进入的shell，可分为：
+
+- 以登陆方式进入的shell会执行关键字为 `profile` 的文件，比如 `~/.bash_profile`；
+- 非登陆方式进入的shell会执行关键字为 `rc` 的文件，比如`~/.bashrc`。
+
+如果使用命令 `sudo -i` 或者 `sudo <command>`，将会以登陆方式使用shell，这时候仅会执行关键字为 `profile` 的内容。
+
+默认 Gnome 桌面开启一个 Shell 默认仅会执行关键字 `rc` 的文件。
+
+#### 初始化脚本文件的优先级
+
+非登陆方式默认 `~/.bashrc`
+
+登陆方式：`/etc/profile` > 用户的 `profile`
+
+有多个用户的 `profile` 文件路径，Bash shell 会按照以下优先级寻找并读取这些文件并仅执行最先找到的一个：
+
+1. `~/.bash_profile`
+2. `~/.bash_login`（如果 `~/.bash_profile` 不存在）
+3. `~/.profile`（如果 `~/.bash_profile` 和 `~/.bash_login` 都不存在）
 
 ### Pager
 
@@ -73,15 +111,3 @@ $ ls mydoc2.
 
 上述情况在Gnome下 `alt` 可能被全局占用，请在 Setting -> Keyboard -> Special Character Entry 切换快捷键。
 
-## Config File
-
-配置文件路径：
-
-- /bin/bash The bash executable
-- /etc/profile The systemwide initialization file, executed for login shells
-- ˜/.bash_profile The personal initialization file, executed for login shells
-- ˜/.bashrc The individual per-interactive-shell startup file
-- ˜/.bash_logout The  individual  login shell cleanup file, executed when a login shell exits
-- ˜/.inputrc Individual readline initialization file
-
-GDM用户登陆测试结论：不会执行 `~/.bash_profile`，`~/.xprofile` 以及 `~/.profile` 。老老实实用 `~/.bashrc`
