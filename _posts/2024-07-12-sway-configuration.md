@@ -1,6 +1,6 @@
+---
 title: sway configuration
 date: 2024-07-12
-
 ---
 
 # sway configuration

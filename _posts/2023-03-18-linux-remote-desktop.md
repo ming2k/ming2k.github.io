@@ -1,9 +1,13 @@
+---
+title: linux desktop remote control
+date: 2024-07-17
+---
+
 # Linux远程桌面
 
 远程一般有两种方式VNC和RDP（MS-RD）
 
 前者通用，后者时微软创建的协议，有压缩功能可以降低带宽压力。
-
 
 ## Gnome
 

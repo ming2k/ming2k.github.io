@@ -1,6 +1,6 @@
+---
 title: linux keyboard remap
 date: 2024-07-13
-
 ---
 
 # Linux Keyboard Remap
