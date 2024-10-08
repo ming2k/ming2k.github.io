@@ -11,7 +11,7 @@ ref:
 - [GTK - Arch Wiki](https://wiki.archlinux.org/title/GTK)
 - [FreeDesktop icon theme spec](https://specifications.freedesktop.org/icon-theme-spec)
 
-## Appearance Location
+## Icon Setting
 
 Appearance includes `icon` and `gtk-theme`.
 
@@ -22,6 +22,24 @@ the icon path:
 1. `/usr/share/icons/`
 2. `~/.icons`
 3. `~/.local/share/icons/`
+
+### Configure Cursor
+
+1. Download Cursor file to icon path.
+
+2. Setting gsettings set cursor theme, but it only work for gtk program
+
+  ```sh
+  gsettings set org.gnome.desktop.interface cursor-theme '<THEME_NAME>'
+  ```
+3. For it work on all appliaction, config sway configure:
+
+  ```sh
+  seat seat0 xcursor_theme <THEME_NAME> 24
+  ```
+
+
+## Theme Setting
 
 `gtk-theme` configure the gtk style and behavior, it is only for gtk applications.
 

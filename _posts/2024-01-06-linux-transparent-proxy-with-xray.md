@@ -335,8 +335,11 @@ ping -n <domain>
 
 禁止反向DNS解析就可以解决。
 
+the problem not caused by transparent proxy
+
 ---
 
 **virt manager 虚拟机网络问题**
 
-暂未解决
+set the firewall rule to passby it
+

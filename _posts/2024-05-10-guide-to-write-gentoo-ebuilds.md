@@ -11,10 +11,7 @@ refers:
 - [Creating an ebuild repository - Gentoo](https://wiki.gentoo.org/wiki/Creating_an_ebuild_repository)
 - [](https://devmanual.gentoo.org/ebuild-writing/variables)
 
-```sh
-sudo pkgdev manifest -m
-ebuild /path/to/hifetch-1.0.0.ebuild manifest
-```
+## Create Repo
 
 Creata an the ebuild repo by `eselect repository` from `eselect-repository` package:
 
@@ -27,3 +24,25 @@ It will generate a directory lacated `/var/db/repos/<repository_name>`.
 > [!TIPS]
 > duo portage network sanbox, we can't download package during install.
 > so we need offline compile program, such as `go project`
+
+
+## Build Manifest
+
+```sh
+sudo pkgdev manifest -m
+GENTOO_MIRRORS="" ebuild /path/to/hifetch-1.0.0.ebuild manifest clean unpack
+```
+
+## Install
+
+Test Install
+
+```sh
+ebuild scrub-2.6.1.ebuild clean test install
+```
+
+Merge
+
+```sh
+ebuild scrub-2.6.1.ebuild clean install merge
+```

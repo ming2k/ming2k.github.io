@@ -7,7 +7,7 @@ date: 2024-07-13
 
 ## TL;DR
 
-1. Create the hwdb config file, for example:
+1. Create the hwdb config file in `/etc/udev/hwdb.d`, for example:
 
    /etc/udev/hwdb.d/90-custom-keyboard.hwdb
 
@@ -17,7 +17,7 @@ date: 2024-07-13
     # ...
    ```
 
-2. Updating the Hardware Database Index
+2. xxxxxxxxxx sudo systemctl restart getty@tty1.servicesh
 
    ```sh
    systemd-hwdb update
@@ -34,22 +34,29 @@ refer:
 1. https://wiki.archlinux.org/title/map_scancodes_to_keycodes
 2. https://wiki.archlinux.org/title/Keyboard_input
 
-## Learn How to Write the hwdb Config
+## How to Write the hwdb Config
 
-### Specify the Kernel Module
+for example:
+
+`/etc/udev/hwdb.d/90-custom-keyboard.hwdb`:
+
+```hwdb
+evdev:input:b0003v04D9p4545e0110*
+ KEYBOARD_KEY_700e2=leftmeta
+ KEYBOARD_KEY_700e3=leftalt
+```
+
+### How to Confrim Your Device Module
 
 `module` follows `evdev`, for example `evdev:input:xxxx`
 
-#### How to Confrim Your Device Module
-
 1. Comfrim which event is the module that you want to check
 
-   Use the following command can reveal more detials(driver version, ID, name etc):
+  Use the following command can show all events:
 
-   ```sh
-   evtest /dev/input/event<X>
-   # X is number
-   ```
+  ```sh
+  evtest
+  ```
 
 2. Using the event to query module string, load the appropriate kernel module for the device.
 
@@ -73,9 +80,9 @@ refer:
    evdev:input:b0011v0001p0001eAB83*
    ```
 
-#### How to Confrim Scancode and Keycode
+   `b` means `bus`, `v` means vendor, `p` means product, `e` means `version`.
 
-`/usr/include/linux/input-event-codes.h` contains the keycode, see the `KEY_<KEYCODE>` variables. for example `leftalt`.
+#### How to Confrim Scancode and Keycode
 
 Use the following command can check scancode and scancode's keycode map:
 
@@ -84,12 +91,27 @@ evtest /dev/input/event<X>
 # X is number
 ```
 
+Press the key to trigger event:
+
+Analyze logs, for exmaple:
+
+```log
+Event: time 1725605974.103610, type 4 (EV_MSC), code 4 (MSC_SCAN), value db
+Event: time 1725605974.103610, type 1 (EV_KEY), code 56 (KEY_LEFTALT), value 0
+Event: time 1725605974.103610, -------------- SYN_REPORT ------------
+```
+
+`scancode` is `db`
+`keycode` is `56/left alt`
+
+Besides, `/usr/include/linux/input-event-codes.h` contains the keycode, see the `KEY_<KEYCODE>` variables. for example `leftalt`.
+
 ## hwdb Config Example
 
 ### Swap ALT WITH SUPER AKA. META
 
 ```hwdb
 evdev:atkbd:*
- KEYBOARD_KEY_38=leftmeta
- KEYBOARD_KEY_db=leftalt
+ keyboard_key_38=leftmeta
+ keyboard_key_db=leftalt
 ```

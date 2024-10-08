@@ -39,3 +39,11 @@ ratbagctl "<devcie_name>" dpi get
 ratbagctl "Logitech G304" dpi get
 ```
 
+set dpi
+
+```sh
+ratbagctl "<device_name>" dpi set <number>
+# for example
+ratbagctl "Logitech G304" dpi set 800
+```
+

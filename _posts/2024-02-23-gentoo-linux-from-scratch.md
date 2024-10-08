@@ -37,6 +37,7 @@ dracut /efi/EFI/gentoo/initrd.cpio.gz --kver <kernel_version>
 dracut /efi/EFI/gentoo/initrd.cpio.gz --kver  6.6.30-gentoo-x86_64
 # 注册 efi （仅需第一次）
 # 这里要根据情况对具体参数进行修改
+#  create an UEFI boot entry
 efibootmgr --create --disk /dev/nvme1n1 --label "Gentoo" --loader "\EFI\gentoo\bzImage.efi" -u 'root=UUID=97ffc05a-6098-4af9-9d61-a40f403fffca initrd=\EFI\gentoo\initrd.cpio.gz'
 ```
 

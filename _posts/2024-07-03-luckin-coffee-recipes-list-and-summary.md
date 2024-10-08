@@ -27,11 +27,7 @@ typora-copy-images-to: ../assets/images/
 
 <img src="/assets/images/image-20240708153338950.png" alt="image-20240708153338950" style="zoom:33%;" />
 
-
-
 #### 12oz 冰
-
-
 
 <img src="/assets/images/image-20240708153410071.png" alt="image-20240708153410071" style="zoom:33%;" />
 
@@ -42,8 +38,6 @@ typora-copy-images-to: ../assets/images/
 #### 24oz 冰
 
 超大杯
-
-
 
 <img src="/assets/images/image-20240710093405282.png" alt="image-20240710093405282" style="zoom: 33%;" />
 
@@ -286,3 +280,4 @@ typora-copy-images-to: ../assets/images/
 5. 搅拌
 6. 加入20oz杯子
 7. 加冰
+

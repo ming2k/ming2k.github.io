@@ -25,7 +25,7 @@ system reload
 systemctl daemon-reload
 ```
 
-restart tty1
+xxxxxxxxxx ​sh
 
 ```sh
 sudo systemctl restart getty@tty1.service

@@ -7,13 +7,13 @@ date: 2024-01-10
 
 # Virt Manager 教程
 
-Libvirt 提供了软件集合用于方便管理多种虚拟机和虚拟化。
+`libvirt` 提供了软件集合用于方便管理多种虚拟机和虚拟化。
 
 > A primary goal of libvirt is to provide a single way to manage multiple different virtualization providers/hypervisors, such as the [KVM/QEMU](https://wiki.archlinux.org/title/QEMU), [Xen](https://wiki.archlinux.org/title/Xen), [LXC](https://wiki.archlinux.org/title/LXC), [OpenVZ](https://openvz.org/) or [VirtualBox](https://wiki.archlinux.org/title/VirtualBox) [hypervisors](https://wiki.archlinux.org/title/Category:Hypervisors) ([among others](https://libvirt.org/drivers.html)).
 
 `virt-manager` 是 `libvirt` 的前端图形化实现方案。
 
-## Install
+## Install and basic Settings
 
 安装 `libvirt` 和 `virt-manager` ：
 
@@ -37,7 +37,7 @@ sudo systemctl enable --now libvirtd
 usermod -a -G libvirt $your_username
 ```
 
-## 使用 libvirt 创建一个虚拟机
+## Create a VM by libvirt
 
 1. 在 xml 中定义虚拟机资源：
 
@@ -136,5 +136,9 @@ sudo virsh net-start default
 sudo virsh net-autostart default
 ```
 
-[参考文章](https://www.arthurkoziel.com/running-virt-manager-and-libvirt-on-macos/)
+**Where is the installation files related vm?**
+
+ qcow2 location: /var/lib/libvirt/images
+
+xml location: /etc/libvirt/qemu/
 

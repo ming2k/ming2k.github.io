@@ -14,6 +14,11 @@ dap
 undo: `u`
 redo: `C-r`
 
+daw : delete the word under the cursor  
+caw : delete the word under the cursor and put you in insert mode
+
+gq{motion}: format
+
 ## Plugin
 
 ### neo-tree

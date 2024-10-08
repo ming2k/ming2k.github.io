@@ -264,7 +264,7 @@ date: 2024-02-12
    e/n/d/r/c/s/q> q
    ```
 
-   上述配置OneDrive过程中需要 `Clent ID` 和 `Client Secret`，你需要注册在[Microsoft Azure 应用注册](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps)注册应用，注册应用后则会产生对应的 `Client ID`，并为注册的应用创建的Secret，这个Secret Value就是 `Client Value`。
+   上述配置OneDrive过程中需要 `Clent ID` 和 `Client Secret`，你需要注册在[Microsoft Azure 应用注册](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps)注册应用，注册应用后则会产生对应的 `Client ID`. then create the secret.
 
 3. 配置完成后，可以使用下述命令测试是否具有访问权限
 
