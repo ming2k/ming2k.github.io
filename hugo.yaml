@@ -1,0 +1,98 @@
+baseURL: "https://ming2k.github.io/"
+title: "Fragments"
+paginate: 5
+theme: PaperMod
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+defaultContentLanguage: "en"
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production
+  title: "Fragments"
+  description: "Thoughts, Code & Life"
+  keywords: [Blog, Tech, Life, Notes, Programming]
+  author: "ming2k"
+  DateFormat: "2006-01-02"
+  defaultTheme: auto
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+  UseHugoToc: true
+  disableScrollToTop: false
+  comments: false
+  showtoc: true
+  tocopen: false
+
+  # Profile Mode
+  profileMode:
+    enabled: true
+    title: "Fragments"
+    subtitle: "Code / Think / Write"
+    imageUrl: ""
+    imageWidth: 120
+    imageHeight: 120
+    buttons:
+      - name: Posts
+        url: posts
+      - name: Archives
+        url: archives
+      - name: Tags
+        url: tags
+
+  # Social Icons
+  socialIcons:
+    - name: github
+      url: "https://github.com/ming2k"
+
+  # Edit Post
+  editPost:
+    URL: "https://github.com/ming2k/ming2k.github.io/content"
+    Text: "Edit" 
+    appendFilePath: true
+
+  # Search Configuration
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+# Navigation Menu
+menu:
+  main:
+    - identifier: archives
+      name: Archives
+      url: /archives/
+      weight: 10
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 20
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 30
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 40
+
+# Syntax Highlighting
+pygmentsUseClasses: true
+markup:
+  highlight:
+    noClasses: false
+    codeFences: true
+    guessSyntax: true
