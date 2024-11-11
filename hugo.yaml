@@ -12,52 +12,57 @@ minify:
   disableXML: true
   minifyOutput: true
 
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # generate search index file
+
 params:
   env: production
   title: "Fragments"
   description: "Thoughts, Code & Life"
   keywords: [Blog, Tech, Life, Notes, Programming]
-  author: "ming2k"
+  author: "Nathaniel Anderson"
   DateFormat: "2006-01-02"
   defaultTheme: auto
-  ShowReadingTime: true
-  ShowShareButtons: true
-  ShowPostNavLinks: true
-  ShowBreadCrumbs: true
-  ShowCodeCopyButtons: true
-  ShowWordCount: true
-  UseHugoToc: true
-  disableScrollToTop: false
   comments: false
   showtoc: true
   tocopen: false
 
   # Profile Mode
   profileMode:
-    enabled: true
-    title: "Fragments"
-    subtitle: "Code / Think / Write"
-    imageUrl: ""
-    imageWidth: 120
-    imageHeight: 120
+    enabled: false
+    title: PaperMod
+    imageUrl: "#"
+    imageTitle: my image
+    # imageWidth: 120
+    # imageHeight: 120
     buttons:
-      - name: Posts
-        url: posts
       - name: Archives
         url: archives
       - name: Tags
         url: tags
 
+  homeInfoParams:
+    Title: "Hi, I'm Nathaniel Anderson"
+    Content: >
+      👋 Welcome to my homepage!
+
+      - I'm a developer also known as Ming.
+
+
   # Social Icons
   socialIcons:
     - name: github
+      title: View Author's Github Homepage
       url: "https://github.com/ming2k"
-
-  # Edit Post
-  editPost:
-    URL: "https://github.com/ming2k/ming2k.github.io/content"
-    Text: "Edit" 
-    appendFilePath: true
+    - name: X
+      title: View Author's X Homepage
+      url: "https://x.com/mingmillennium"
+    - name: email
+      title: Send Author an Email
+      url: "mailto:mingmillennium@gmail.com"
 
   # Search Configuration
   fuseOpts:
@@ -72,21 +77,21 @@ params:
 # Navigation Menu
 menu:
   main:
-    - identifier: archives
-      name: Archives
-      url: /archives/
-      weight: 10
-    - identifier: tags
-      name: Tags
-      url: /tags/
-      weight: 20
     - identifier: search
       name: Search
       url: /search/
+      weight: 10
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      weight: 20
+    - identifier: archives
+      name: Archives
+      url: /archives/
       weight: 30
-    - identifier: about
-      name: About
-      url: /about/
+    - identifier: tags
+      name: Tags
+      url: /tags/
       weight: 40
 
 # Syntax Highlighting
