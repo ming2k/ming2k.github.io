@@ -23,7 +23,7 @@ params:
   title: "Fragments"
   description: "Thoughts, Code & Life"
   keywords: [Blog, Tech, Life, Notes, Programming]
-  author: "Nathaniel Anderson"
+  author: "Harrison Anderson"
   DateFormat: "2006-01-02"
   defaultTheme: auto
   comments: false
@@ -45,7 +45,7 @@ params:
         url: tags
 
   homeInfoParams:
-    Title: "Hi, I'm Nathaniel Anderson"
+    Title: "Hi, I'm Harrison Anderson"
     Content: >
       👋 Welcome to my homepage!
 
