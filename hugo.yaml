@@ -23,7 +23,7 @@ params:
   title: "Fragments"
   description: "Thoughts, Code & Life"
   keywords: [Blog, Tech, Life, Notes, Programming]
-  author: "Harrison Anderson"
+  author: "Ming"
   DateFormat: "2006-01-02"
   defaultTheme: auto
   comments: false
@@ -45,11 +45,11 @@ params:
         url: tags
 
   homeInfoParams:
-    Title: "Hi, I'm Harrison Anderson"
+    Title: "Hi, I'm Ming"
     Content: >
       👋 Welcome to my homepage!
 
-      - I'm a developer also known as Ming.
+      - I'm a full stack designer.
 
 
   # Social Icons
